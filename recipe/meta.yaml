@@ -11,7 +11,7 @@ source:
   sha256: 76cff74b5e2c03898cb8981f7ddb38e6b363c583eff2aaf4c0c39b56be716d19
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<38]
   entry_points:
     - lfdfiles=lfdfiles.__main__:main
