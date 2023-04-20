@@ -1,11 +1,11 @@
-About lfdfiles
-==============
+About lfdfiles-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lfdfiles-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.lfd.uci.edu/~gohlke/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lfdfiles-feedstock/blob/main/LICENSE.txt)
 
 Summary: Laboratory for Fluorescence Dynamics (LFD) file formats
 
