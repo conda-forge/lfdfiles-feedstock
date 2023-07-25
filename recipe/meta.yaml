@@ -12,9 +12,10 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<38]
+  skip: true  # [py<39]
   entry_points:
-    - lfdfiles=lfdfiles.__main__:main
+    - lfdfiles = lfdfiles.__main__:main
+    - fbd2b64 = lfdfiles.fbd2b64:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -30,14 +31,15 @@ requirements:
     - setuptools >=18.0
   run:
     - click
-    - czifile >=2019.7.2
-    - matplotlib-base >=3.4.3
-    - netpbmfile >=2021.6.6
+    - czifile
+    - imagecodecs
+    - matplotlib-base
+    - netpbmfile
     - {{ pin_compatible('numpy') }}
-    - oiffile >=2021.6.6
+    - oiffile
     - python
     - tifffile >=2021.11.2
-
+            
 test:
   imports:
     - lfdfiles
@@ -45,6 +47,7 @@ test:
     - pip list
     - pip check
     - lfdfiles --help
+    - fbd2b64 --help
   requires:
     - pip
 
