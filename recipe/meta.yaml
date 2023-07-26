@@ -1,5 +1,5 @@
 {% set name = "lfdfiles" %}
-{% set version = "2022.9.29" %}
+{% set version = "2023.4.20" %}
 
 
 package:
@@ -8,13 +8,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lfdfiles-{{ version }}.tar.gz
-  sha256: 76cff74b5e2c03898cb8981f7ddb38e6b363c583eff2aaf4c0c39b56be716d19
+  sha256: b1d08eeccc5dff9f9d87cabe5f44ed0d93be455a235899809de74648f61fdab0
 
 build:
-  number: 1
-  skip: true  # [py<38]
+  number: 0
+  skip: true  # [py<39]
   entry_points:
-    - lfdfiles=lfdfiles.__main__:main
+    - lfdfiles = lfdfiles.__main__:main
+    - fbd2b64 = lfdfiles.fbd2b64:main
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -27,17 +28,18 @@ requirements:
     - numpy >=1.21.5
     - pip
     - python
-    - setuptools >=18.0
+    - setuptools
   run:
     - click
-    - czifile >=2019.7.2
-    - matplotlib-base >=3.4.3
-    - netpbmfile >=2021.6.6
+    - czifile
+    - imagecodecs
+    - matplotlib-base
+    - netpbmfile
     - {{ pin_compatible('numpy') }}
-    - oiffile >=2021.6.6
+    - oiffile
     - python
-    - tifffile >=2021.11.2
-
+    - tifffile
+            
 test:
   imports:
     - lfdfiles
@@ -45,6 +47,7 @@ test:
     - pip list
     - pip check
     - lfdfiles --help
+    - fbd2b64 --help
   requires:
     - pip
 
