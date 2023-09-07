@@ -1,5 +1,5 @@
 {% set name = "lfdfiles" %}
-{% set version = "2023.8.1" %}
+{% set version = "2023.8.30" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lfdfiles-{{ version }}.tar.gz
-  sha256: dc5818e6822e171418a2b8390d0f25ccafe8e8722c3144a7981951d5c95bc93a
+  sha256: 9f68efdc92a0132811e7fdb22d7dbc33263fb2e59dfaf48b034eb7544c5ec16e
 
 build:
   number: 0
