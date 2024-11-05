@@ -1,5 +1,5 @@
 {% set name = "lfdfiles" %}
-{% set version = "2023.9.26" %}
+{% set version = "2024.5.24" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lfdfiles-{{ version }}.tar.gz
-  sha256: c2faf4d1c7f80faa71e67f7d7dc684287b88f8e95c7f07706fafd18367e0f95a
+  sha256: c131a351cb70b7ad3f49bf64678f58182806148d8ed610a576a71977a9d7c265
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<39]
   entry_points:
     - lfdfiles = lfdfiles.__main__:main
@@ -21,6 +21,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - libgomp      # [linux]
     - llvm-openmp  # [osx]
   host:
