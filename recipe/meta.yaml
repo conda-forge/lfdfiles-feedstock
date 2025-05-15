@@ -1,5 +1,5 @@
 {% set name = "lfdfiles" %}
-{% set version = "2023.9.26" %}
+{% set version = "2025.5.10" %}
 
 
 package:
@@ -7,25 +7,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lfdfiles-{{ version }}.tar.gz
-  sha256: c2faf4d1c7f80faa71e67f7d7dc684287b88f8e95c7f07706fafd18367e0f95a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lfdfiles-{{ version }}.tar.gz
+  sha256: 5536ade2b665dc2f5a869e20772e3575728f3d0bfac0ed2ceff72de72dbb0910
 
 build:
-  number: 1
-  skip: true  # [py<39]
+  skip: true  # [py<310]
   entry_points:
     - lfdfiles = lfdfiles.__main__:main
     - fbd2b64 = lfdfiles.fbd2b64:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython >=3.1.0                         # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - libgomp      # [linux]
     - llvm-openmp  # [osx]
   host:
-    - cython >=0.29.27
-    - numpy >=1.21.5
+    - cython >=3.1.0
+    - numpy
     - pip
     - python
     - setuptools
@@ -35,7 +39,6 @@ requirements:
     - imagecodecs
     - matplotlib-base
     - netpbmfile
-    - {{ pin_compatible('numpy') }}
     - oiffile
     - python
     - tifffile
@@ -52,7 +55,7 @@ test:
     - pip
 
 about:
-  home: https://www.lfd.uci.edu/~gohlke/
+  home: https://www.cgohlke.com
   summary: Laboratory for Fluorescence Dynamics (LFD) file formats
   license: BSD-3-Clause
   license_file: LICENSE
@@ -61,3 +64,4 @@ about:
 extra:
   recipe-maintainers:
     - goanpeca
+    - cgohlke
