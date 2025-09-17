@@ -25,7 +25,14 @@ requirements:
     - setuptools
   run:
     - numpy
+    - click
+    - czifile
+    - imagecodecs
+    - matplotlib-base
+    - netpbmfile
+    - oiffile
     - python >={{ python_min }}
+    - tifffile
 
 test:
   imports:
