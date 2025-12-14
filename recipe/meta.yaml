@@ -1,6 +1,6 @@
 {% set name = "lfdfiles" %}
-{% set version = "2025.9.17" %}
-{% set sha256 = "17bffd96e709abc3741f202ff57f3fb93481f32380f56790d52c1a12f61e662c" %}
+{% set version = "2025.12.12" %}
+{% set sha256 = "161b03a48b0553fdafdccb6a599d15eff0d76420f46e59ad37523ba9abe7c626" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   noarch: python
   entry_points:
