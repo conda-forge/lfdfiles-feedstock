@@ -1,6 +1,6 @@
 {% set name = "lfdfiles" %}
-{% set version = "2026.1.14" %}
-{% set sha256 = "62f0ecd185a0ac99131e08f0a54d4a88b381b41b92c5b0cef244a937b71b26ef" %}
+{% set version = "2026.3.18" %}
+{% set sha256 = "5a0c3d3fbb61186ee89ef0710257e6b089388be7db52ebab71fd0b6704fdf1a1" %}
 {% set python_min = "3.11" %}
 
 package:
