@@ -1,6 +1,6 @@
 {% set name = "lfdfiles" %}
-{% set version = "2026.6.24" %}
-{% set sha256 = "802bc3b093bd92b03e2d806d5bdab1870e2e978b52b0cdd40f3e7b807868162d" %}
+{% set version = "2026.10.15" %}
+{% set sha256 = "c1c93b2847346c430f4df142c1e1ef27e610184001ce2334cf362cbbcc033162" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
