@@ -194,5 +194,4 @@ Feedstock Maintainers
 =====================
 
 * [@cgohlke](https://github.com/cgohlke/)
-* [@goanpeca](https://github.com/goanpeca/)
 
